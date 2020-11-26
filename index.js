@@ -28,11 +28,10 @@ $(function() {
     });
 });
 
-/* Toggles between two classes, ".shopping-item" and ".shopping-item__checked" when clicking the
-"check" button */
+/* Adds and removes ".shopping-item__checked" when clicking the "check" button */
 $(function() {
     $(".shopping-list").on("click", ".shopping-item-toggle", event => {
         event.preventDefault();
-        $(event.currentTarget).closest("li").toggleClass(".shopping-item", ".shopping-item__checked");
+        $(event.currentTarget).closest("li").find("span").first().toggleClass("shopping-item__checked");
     });
 });
